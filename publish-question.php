@@ -34,7 +34,7 @@ session_start();
         <label for="exampleInputEmail1" class="form-label">Contenu de la question</label>
         <textarea class="form-control" name="content"></textarea>
       </div>
-        <button type="submit" class="btn btn-primary" name="validate">Modifier la question</button>
+        <button type="submit" class="btn btn-primary" name="validate">Poster la question</button>
     </form>
 </body>
 </html>
