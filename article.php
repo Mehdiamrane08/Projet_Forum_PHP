@@ -1,7 +1,11 @@
-<?php 
+<?php
+
 session_start();
-require('actions/questions/postAnswerAction.php');
+
 require('actions/questions/showArticleContentAction.php');
+require('actions/questions/postAnswerAction.php');
+require('actions/questions/showAllAnswersOfQuestionAction.php');
+
 
 ?>
 
@@ -16,9 +20,9 @@ require('actions/questions/showArticleContentAction.php');
     <br><br>
     
     <div class="container">
-
+    
         <?php
-
+    
             if(isset($errorMsg)){ echo $errorMsg; }
             
             
@@ -31,7 +35,7 @@ require('actions/questions/showArticleContentAction.php');
                 <hr>
                 <p><?= $question_content; ?></p>
                 <hr>
-                <small><?= $question_pseudo_author . ' ' . $question_publication_date; ?></small>
+                <small><?= '<a href="profile.php?id=' .$question_id_author . '">'.$question_pseudo_author.' </a> ' . $question_publication_date; ?></small>
         </section>
 
                 <hr>
@@ -46,6 +50,23 @@ require('actions/questions/showArticleContentAction.php');
                     <button id="b" class="btn btn-primary" type="submit" name="validate">Répondre</button>          
                 </div>
             </form>
+
+            <?php 
+                while($answer = $getAllAnswersOfThisQuestion->fetch()){
+                    ?>
+                    <div class="card">
+                        <div class="card-header">
+                            <?= $answer['pseudo_auteur']; ?>
+                        </div>
+
+                        <div class="card-body">
+                            <?= $answer['contenu']; ?>
+                        </div>
+                    </div>
+                    <br>
+                    <?php
+                }
+            ?>
 
         </section>
 
