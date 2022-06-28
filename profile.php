@@ -22,6 +22,7 @@
                     <h4>@<?= $user_pseudo; ?></h4>
                     <hr>
                     <p><?= $user_lastname. ' ' . $user_firstname; ?></p>
+                    <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode($_SESSION['img']) . '" />'; ?>
                 </div>
             </div>
             <br>

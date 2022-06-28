@@ -10,7 +10,7 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <?php include 'includes/head.php'; ?>
 

@@ -1,16 +1,25 @@
-const navigation = document.querySelector('.navbar');
+ const navigation = document.querySelector('.navbar');
   
-window.addEventListener('scroll', () => {
+ window.addEventListener('scroll', () => {
 
-    if(window.scrollY > 20 ){
-        navigation.classList.add('navbar1');
+     if(window.scrollY > 20 ){
+         navigation.classList.add('navbar1');
 
-    }else{
-        navigation.classList.remove('navbar1');
-    }
+     }else{
+         navigation.classList.remove('navbar1');
+     }
     
-});
+ });
 
-const btn = document.querySelector('#btnLogin');
+//  LOADER   //
 
+    setTimeout(function(){
 
+        const loader = document.getElementById('loader');
+        loader.classList.add('disable_loader'); 
+
+    },1000)   
+
+ // HAMBURGER NAVBAR //   
+
+ 

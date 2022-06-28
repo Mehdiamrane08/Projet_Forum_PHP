@@ -14,7 +14,7 @@ require('actions/database.php');
         $user_lastname = htmlspecialchars($_POST['lastname']);
         $user_firstname = htmlspecialchars($_POST['firstname']);
         $user_password = password_hash($_POST['password'], PASSWORD_DEFAULT);//password_hash + PASSWORD_DEFAULT(algorithme par defaut) me permet de crypter le mdp dans la base de données//
-        
+        $user_image = file_get_contents($_FILES['img']['tmp_name']);
         //Vérifier si l'utilisateur existe déjà sur le site                                                          
         $checkIfUserAlreadyExists = $bdd->prepare('SELECT pseudo FROM users WHERE pseudo = ?');//permet de vérifier si l'utilisateur es deja inscrit sur le site afin déviter de le réinscrire je demande SELECT le pseudo FROM dans la table de la bdd users Where le pseudo qu'a rentré lutilisateur
         $checkIfUserAlreadyExists->execute(array($user_pseudo));
@@ -22,12 +22,12 @@ require('actions/database.php');
         if($checkIfUserAlreadyExists->rowCount() == 0){
 
                //Insérer l'utilisateur dans la BDD
-               $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(pseudo, nom, prénom, mdp)VALUES(?, ?, ?, ?)');
-               $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password));
+               $insertUserOnWebsite = $bdd->prepare('INSERT INTO users(pseudo, nom, prénom, mdp, img )VALUES(?, ?, ?, ?, ?)');
+               $insertUserOnWebsite->execute(array($user_pseudo, $user_lastname, $user_firstname, $user_password, $user_image));
           
                //Récupérer les informations de l'utilisateur
-               $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, nom, prénom FROM users WHERE nom = ? AND prénom = ? AND pseudo = ?');
-               $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo));
+               $getInfosOfThisUserReq = $bdd->prepare('SELECT id, pseudo, nom, prénom ,img FROM users WHERE nom = ? AND prénom = ? AND pseudo = ? AND img = ? ');
+               $getInfosOfThisUserReq->execute(array($user_lastname, $user_firstname, $user_pseudo, $user_image));
                
                $userInfos = $getInfosOfThisUserReq->fetch();
 
@@ -37,6 +37,7 @@ require('actions/database.php');
                $_SESSION['lastname'] = $userInfos['nom'];
                $_SESSION['firstname'] = $userInfos['prénom'];
                $_SESSION['pseudo'] = $userInfos['pseudo'];
+               $_SESSION['img'] = $userInfos['img'];
 
                //Rediriger l'utilisateur vers la page d'accueil                
                header('location: index.php');
