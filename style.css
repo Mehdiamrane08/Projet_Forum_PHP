@@ -23,6 +23,11 @@ body {
     
  }
 
+ .navbar1{
+
+    background-color: red;
+ }
+
  .nav-link{
     text-align: center;
     color: rgb(255, 255, 255);
@@ -30,6 +35,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
  }
+
+ .nav-link:hover{
+
+    transform: scale(1.1);
+    border-bottom: solid 2px red;
+ }
+
 .navbar-toggler{
 
     border-color: red;
@@ -367,11 +379,11 @@ body {
 }
 
 
-/*----------------------------- PAGE ARTICLE------------------------ */
+/*----------------------------- PAGE PUBLISH QUESTION------------------------ */
 
 
 .style-question{
-    height: 100%;
+    min-height: 100vh;
     background-image: url(./assets/img/Cosmonaut8.jpg);
    
 }
@@ -412,7 +424,7 @@ body {
 
 .video-responsive {
     overflow:hidden;
-    padding-bottom:56.25%; 
+    padding-bottom:56.25%;
     position:relative;
     height:0;
    
@@ -425,8 +437,13 @@ body {
     position:absolute;
    }
 
-
-
+@media screen and (max-width: 580px)
+{
+    #frame-video
+    {
+        width: 280px;
+    }
+}
 /*----------------------------------PAGE QUESTIONS----------------------------------*/
 .bg-myquestion{
 
@@ -436,8 +453,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-   
-    
 }
 
 
@@ -451,9 +466,6 @@ body {
     max-width: 700px;
     width: 100%;
     height: 100%;
-    
-    
-
 }
 
 
@@ -468,19 +480,100 @@ body {
     border-radius: 50px;
 }
 
- /* .card-body{
-    margin: 0;
+.container-profile{
+
+    background-image: url(./assets/img/Cosmonaut3.jpg);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: solid red 2px;
-    background-color: darkslategrey;
-    color: red;
+    padding-top: 30px;
+}
+
+.card-imgprofile
+{
+    text-align: center;
+    border-radius: 50px;
+}
+
+.card-profile
+{
+    width: 500px;
+    border-radius: 25px;
+    border: 5px solid yellow;
+}
+
+@media screen and (max-width:750px) {
+
+    .allimg{
+
+        width: 250px;
+        height: 150px;
+    }
+
+    .card-profile
+{
+    width: 250px;
+}
+
     
-}  */
+}
+
+
+/* ----------------------------------PAGE ARTICLE ------------------------*/
+
+
+.container-article{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-image: url(./assets/img/Cosmonaut8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    color: blueviolet;
+    
+}
+
+.card-article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px green;
+    padding-top: 40px;
+}
+
+.show-answers{
+
+    width: 300px;
+}
 
 
 
+/* ----------------------------------PAGE EDIT QUESTIONS------------------------*/
+
+.container-edit{
+
+    background-image: url(./assets/img/1500x500.jpeg);
+    min-height: 100vh;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: xx-large;
+    
+}
+
+.card-edit{
+
+    text-align: center;
+    border: solid 2px red;
+}
 
 

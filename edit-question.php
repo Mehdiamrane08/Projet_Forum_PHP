@@ -10,12 +10,13 @@
     <?php include 'includes/navbar.php'; ?>
 
     <br><br>
-<div class="container">
+<div class="container-edit">
   <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; }?>
 
   <?php 
     if(isset($question_content)){
       ?>
+      <div class="card-edit">
           <form method="POST">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Titre de la question</label>
@@ -31,6 +32,7 @@
             </div>
               <button type="submit" class="btn btn-primary" name="validate">Modifier la question</button>
           </form>
+      </div>
           <?php
           }
       ?>  

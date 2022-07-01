@@ -19,7 +19,7 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
     <?php include 'includes/navbar.php'; ?>
     <br><br>
     
-    <div class="container">
+    <div class="container-article">
     
         <?php
     
@@ -29,46 +29,47 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
 
             if(isset($question_publication_date)){
                 ?>
+        <div class="card-article">
+            <section class="show-content">
+                    <h3> <?= $question_title; ?> </h3>
+                    <hr>
+                    <p><?= $question_content; ?></p>
+                    <hr>
+                    <small><?= '<a href="profile.php?id=' .$question_id_author . '">'.$question_pseudo_author.' </a> ' . $question_publication_date; ?></small>
+            </section>
 
-        <section class="show-content">
-                <h3> <?= $question_title; ?> </h3>
-                <hr>
-                <p><?= $question_content; ?></p>
-                <hr>
-                <small><?= '<a href="profile.php?id=' .$question_id_author . '">'.$question_pseudo_author.' </a> ' . $question_publication_date; ?></small>
-        </section>
+                    <hr>
 
-                <hr>
+            <section class="show-answers">
 
-        <section class="show-answers">
-
-            <form class="form-group" method="POST">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Réponse :</label>
-                    <input id="a" name="answer" class="form-control"></input> 
-                    <br>
-                    <button id="b" class="btn btn-primary" type="submit" name="validate">Répondre</button>          
-                </div>
-            </form>
-
-            <?php 
-                while($answer = $getAllAnswersOfThisQuestion->fetch()){
-                    ?>
-                    <div class="card">
-                        <div class="card-header">
-                            <?= $answer['pseudo_auteur']; ?>
-                        </div>
-
-                        <div class="card-body">
-                            <?= $answer['contenu']; ?>
-                        </div>
+                <form class="form-group" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Réponse :</label>
+                        <input id="a" name="answer" class="form-control"></input> 
+                        <br>
+                        <button id="b" class="btn btn-primary" type="submit" name="validate">Répondre</button>          
                     </div>
-                    <br>
-                    <?php
-                }
-            ?>
+                </form>
 
-        </section>
+                <?php 
+                    while($answer = $getAllAnswersOfThisQuestion->fetch()){
+                        ?>
+                        <div class="card">
+                            <div class="card-header">
+                                <?= $answer['pseudo_auteur']; ?>
+                            </div>
+
+                            <div class="card-body">
+                                <?= $answer['contenu']; ?>
+                            </div>
+                        </div>
+                        <br>
+                        <?php
+                    }
+                ?>
+
+            </section>
+        </div>
 
 
                 <?php

@@ -18,31 +18,31 @@
             $image = base64_encode($user_image);
             ?>
 
-            <div class="card">
-                <div class="card-body">
-                    <h4>@<?= $user_pseudo; ?></h4>
-                    <hr>
-                    <p><?= $user_lastname. ' ' . $user_firstname; ?></p>
-                    <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64, '.$image.'"/>'; ?>
-                </div>
+            <div class="card card-imgprofile">
+                    <div class="card-body">
+                        <h4>@<?= $user_pseudo; ?></h4>
+                        <hr>
+                        <p><?= $user_lastname. ' ' . $user_firstname; ?></p>
+                        <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64, '.$image.'"/>'; ?>
+                    </div>
             </div>
-            <br>
-            <?php
-            while($question = $getHisQuestions->fetch()){
-                ?>
-                <div class="card">
-                    <div class="card-header">
-                        <?= $question['titre']; ?>
-                    </div>  
+                <br>
+                <?php
+                while($question = $getHisQuestions->fetch()){
+                    ?>
+                    <div class="card card-profile">
+                            <div class="card-header">
+                                <?= $question['titre']; ?>
+                            </div>  
 
-                <div class="card-body">
-                    <?= $question['description']; ?>
-                </div> 
+                        <div class="card-body">
+                            <?= $question['description']; ?>
+                        </div> 
 
-                <div class="card-footer">
-                    Par <? $question['pseudo_auteur']; ?> le <?= $question['date_publication']; ?>
-                </div>
-            </div>
+                        <div class="card-footer">
+                            <? $question['pseudo_auteur']; ?> le <?= $question['date_publication']; ?>
+                        </div>
+                    </div>
             <br>
 
             <?php
