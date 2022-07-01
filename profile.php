@@ -9,12 +9,13 @@
     <?php include 'includes/navbar.php'; ?>
     <br><br>
 
-    <div class="container">
+    <div class="container-profile">
         <?php
         if(isset($errorMsg)) { echo $errorMsg; } 
 
+
         if(isset($getHisQuestions)){
-            
+            $image = base64_encode($user_image);
             ?>
 
             <div class="card">
@@ -22,7 +23,7 @@
                     <h4>@<?= $user_pseudo; ?></h4>
                     <hr>
                     <p><?= $user_lastname. ' ' . $user_firstname; ?></p>
-                    <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode($_SESSION['img']) . '" />'; ?>
+                    <?= '<img class="allimg clickimage" src="data:image/png|image/jpeg|image/gif|image/jpg;base64, '.$image.'"/>'; ?>
                 </div>
             </div>
             <br>

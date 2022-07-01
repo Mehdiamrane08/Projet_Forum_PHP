@@ -3,15 +3,21 @@
     margin: 0;
     padding: 0;  
 }
+body {
+    /* background-image: url(../Projet-Final/assets/img/Cosmonaut12.jpg); */
+    background-color: black;
+    height: 100%;
+}
 
 
 
-/*NAVBAR*/
+/*--------NAVBAR--------*/
  .navbar{
-   
     background-color: rgb(4, 4, 49);
     color: white;
     position: fixed;
+    top:0;
+    left: 0;
     width: 100%;
     z-index: 1;
     
@@ -29,7 +35,7 @@
     border-color: red;
 }
 
-/*PAGE LOGIN */
+/*--------------------------PAGE LOGIN-------------------------*/
 .pageLogin{
 
     height: 100vh;
@@ -52,7 +58,7 @@
       
 }
 
-.styleLogin{
+.styleLogin{adding-top: 50px;
   
     display: flex;
     flex-direction: row;
@@ -153,7 +159,7 @@
     color: red;
 }
 
-/*LOADER*/
+/*-------------------------------LOADER-----------------------------------*/
 
 .loader_flex{
     position: fixed;
@@ -191,7 +197,7 @@
     display: none;
 }
 
-/* Page Signup */
+/*--------------------------------- Page Signup --------------------------------------*/
 
 .newLogin{
     
@@ -202,7 +208,55 @@
     /* border: 2px solid red; */
 }
 
-/* INDEX.PHP */
+#btn-signup{
+    background-color:rgb(12, 12, 12);
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    height: 50px;
+    width: 150px;
+    border: solid 2px rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
+    color:rgb(255, 0, 242);
+}
+
+#btn-signup:active{
+   
+    position: relative;
+    top: 5px;
+    left: 5px;
+    box-shadow: 0px 0px 0px;
+}
+
+#btn-signup:hover{
+
+    background-color:rgba(0, 0, 0, 0.2);
+    color: white;
+    border: solid 2px;
+}
+
+#txt-signup {
+
+    color: rgb(255, 0, 242);
+    font-size: larger;
+      
+}
+
+#txt-signup:hover{
+
+    color: white;
+}
+
+#style-photo{
+
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+
+}
+
+
+/* ------------------------------INDEX.PHP-------------------------- */
 
 .card-index{
     position: relative;
@@ -210,17 +264,39 @@
     flex-direction: column;
     min-width: 80px;
     max-width: 400px;
-    margin-right: 50px;
+    
     width: 400px;
     min-height: 150px;
+    max-height: 300px;
     height: 180px;
     word-wrap: break-word;
     background-color: rgb(240, 187, 240);
     background-clip: border-box;
-    border: 3px solid red;
-    border-radius: 0.25rem;
+    border-radius: 20px;
     margin-bottom: 10px;
+    box-shadow: 2px 2px 2px 2px #a3d7c2;
+    
 }   
+
+.card-index:hover{
+
+    transform:scale(1.1);
+}
+
+.btn-back{
+
+    border: solid 2px #a3d7c2;
+    min-width: 400px;
+    margin-top: 50px;
+}
+
+.btn-back:hover{
+
+    transform:scale(1.1);
+    border: solid 2px #a3d7c2;
+
+}
+
 
 .index-flex{
 
@@ -228,31 +304,29 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    height: 100%;
 }
-
-
 .bg-index{
-
-    padding-top: 50px;
-    background-image: url(../Projet-Final/assets/img/Cosmonaut12.jpg);
-    background-repeat: no-repeat;
+    background-image: url(./assets/img/Cosmonaut12.jpg);
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 50px;
     background-size: cover;
-    height: 100vh;
-    
+    min-height: 100vh;
 }
 
 .style-form{
-
     display: flex;
-    justify-content: center;
-    width: 100%;
+    flex-direction:column;
+    align-items: center;
+    
     
 }
 
 #search-btn{
     
     background-color: rgb(240, 187, 240);
-    color: blue;
+    color: rgb(255, 0, 0);
     margin-top: 50px;
     width: 350px;
     min-width: 150px;
@@ -265,7 +339,7 @@
   
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:768px) {
 
     #search-btn-btn{
         background-color: rgb(47, 0, 255);
@@ -292,24 +366,119 @@
     
 }
 
-/* PAGE QUESTION */
+
+/*----------------------------- PAGE ARTICLE------------------------ */
+
 
 .style-question{
-    height: 100vh;
+    height: 100%;
     background-image: url(./assets/img/Cosmonaut8.jpg);
+   
 }
 
 .style-publish{
-   color: red;
+   color: rgb(0, 255, 21);
    padding-top: 50px;
 }
 
 .text-error{
-    color: red;
+    color: rgb(255, 0, 0);
+    margin-top: 10px;
+}
+
+#titre-yt{
+
+    color: rgb(136, 255, 0);
+    justify-content: center;
+}
+
+.question-tuto{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#frame-video{
+
+    width:560px;
+    height:315px;
+    border: solid red 2px;
+    border-radius: 20px;
+    
+}
+
+.video-responsive {
+    overflow:hidden;
+    padding-bottom:56.25%; 
+    position:relative;
+    height:0;
+   
+   }
+   .video-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+   }
+
+
+
+/*----------------------------------PAGE QUESTIONS----------------------------------*/
+.bg-myquestion{
+
+    background-image: url(./assets/img/Cosmonaut12.jpg);
+    min-height: 100vh;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+
+.container-myquestion{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    max-width: 700px;
+    width: 100%;
+    height: 100%;
+    
+    
+
 }
 
 
 
+
+/* ----------------------------------PAGE PROFILE ------------------------*/
+
+.allimg{
+    border: solid 3px rgb(255, 0, 242);
+    height: 350px;
+    width: 500px;
+    border-radius: 50px;
+}
+
+ /* .card-body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: solid red 2px;
+    background-color: darkslategrey;
+    color: red;
+    
+}  */
 
 
 

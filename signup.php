@@ -49,16 +49,15 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Image photo de profil</label>
-            <input type="file" class="form-control" name="img">
-            
+            <label class="form-label" id="style-photo">Image photo de profil</label>
+            <input type="file" class="form-control" name="img"> 
           </div>
 
           
           
-          <button type="submit" class="btn btn-primary" name="validate">S'inscrire</button>
+          <button type="submit" class="btn btn-primary" id="btn-signup" name="validate">S'inscrire</button>
           <br><br>
-          <a href="login.php"><p>J'ai déjà un compte, je me connecte</p></a>
+          <a href="login.php" id="txt-signup"><p>J'ai déjà un compte, je me connecte</p></a>
   
 
     </form>

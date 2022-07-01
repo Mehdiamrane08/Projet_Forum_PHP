@@ -54,7 +54,12 @@
                         </div>
                         <?php
                     }
+                    /* Je vérifie si le paramètre search existe et si sa valeur est différent de '' 
+                        Si oui j'affiche le bouton de retour sinon je n'affiche rien */
+                    if(isset($_GET["search"]) && $_GET['search'] != ''):
                 ?>
+                    <a href="index.php" class="btn btn-danger btn-back">Retour</a>
+                <?php endif; ?>
         </div>                     
     </div>
 </div>
