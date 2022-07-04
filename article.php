@@ -35,7 +35,7 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
                     <hr>
                     <p><?= $question_content; ?></p>
                     <hr>
-                    <small><?= '<a href="profile.php?id=' .$question_id_author . '">'.$question_pseudo_author.' </a> ' . $question_publication_date; ?></small>
+                    <small><?= '<a href="profile.php?id=' .$question_id_author .'">'.$question_pseudo_author.' </a> '. $question_publication_date; ?></small>
             </section>
 
                     <hr>
@@ -47,14 +47,14 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
                         <label for="exampleInputEmail1" class="form-label">Réponse :</label>
                         <input id="a" name="answer" class="form-control"></input> 
                         <br>
-                        <button id="b" class="btn btn-primary" type="submit" name="validate">Répondre</button>          
+                        <button id="btn-article" class="btn" type="submit" name="validate">Répondre</button>          
                     </div>
                 </form>
 
                 <?php 
                     while($answer = $getAllAnswersOfThisQuestion->fetch()){
                         ?>
-                        <div class="card">
+                        <div class="card-article-content">
                             <div class="card-header">
                                 <?= $answer['pseudo_auteur']; ?>
                             </div>

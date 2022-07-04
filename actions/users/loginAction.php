@@ -35,11 +35,11 @@ if(isset($_POST['validate'])){ //ISSET pour verifier si une variable existe
                header('Location: index.php');
 
             }else{
-                $errorMsg ="Votre mot de passe est incorrect...";
+                $errorMsg ="Votre mot de passe ou le pseudo est incorrect...";
             }
 
         }else{
-            $errorMsg = "Votre pseudo est incorrect...";
+            $errorMsg = "Votre mot de passe ou le pseudo est incorrect...";
         }
 
     }else{

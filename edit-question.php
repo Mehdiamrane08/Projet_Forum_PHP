@@ -30,7 +30,7 @@
               <label for="exampleInputEmail1" class="form-label">Contenu de la question</label>
               <textarea class="form-control" name="content"><?=$question_content;?></textarea>
             </div>
-              <button type="submit" class="btn btn-primary" name="validate">Modifier la question</button>
+              <button id="btn-edit" type="submit" class="btn" name="validate">Modifier la question</button>
           </form>
       </div>
           <?php

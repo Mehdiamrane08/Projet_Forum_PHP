@@ -16,7 +16,7 @@
                 while($question = $getAllMyQuestions->fetch()){ 
             ?>
 
-                <div class="card my-2">
+                <div class="card-myq my-2">
                         <h5 class="card-header">
                             <a href="article.php?id= <?= $question['id']; ?>">
                                 <?php echo $question['titre']; ?>
